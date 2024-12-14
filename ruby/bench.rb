@@ -82,12 +82,12 @@ def run_test(title, mode, cases, iters: 1, unit: 'ns', show_mbps: false)
 end
 
 
-HELLO_ITERS = 100_000
+HELLO_ITERS = 2_000_000
 
 run_test("Hello World Decode", :decode, 'trivial_helloworld', iters: HELLO_ITERS)
 run_test("Hello World Encode", :encode, 'trivial_helloworld', iters: HELLO_ITERS)
 
-REALISTIC_ITERS = 25
+REALISTIC_ITERS = 100
 
 realistic_tests = TESTCASES.keys.reject { |k| k.start_with?("torture_") || k.start_with?("trivial_") }
 
